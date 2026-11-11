@@ -31,7 +31,7 @@ def save(name):
     plt.close()
 
 # Chart 1: sales and profit per year
-results['yearly_sales'].plot(x='year', y=['sales', 'profit'], kind='bar', figsize=(8, 5))
+results['yearly_sales'].query("year != '2018'").plot(x='year', y=['sales', 'profit'], kind='bar', figsize=(8, 5))
 plt.title('Sales and Profit per Year')
 plt.xlabel('Year')
 plt.ylabel('Amount ($)')

@@ -90,3 +90,16 @@ WITH ranked AS (
 SELECT category, product_name, sales
 FROM ranked
 WHERE rnk = 1;
+
+-- date_range
+SELECT MIN(order_date) AS first_order, MAX(order_date) AS last_order, COUNT(*) AS rows_in_2018
+FROM orders
+WHERE order_date >= '2018-01-01';
+
+-- discount_by_subcategory
+SELECT sub_category,
+       ROUND(AVG(discount) * 100, 1) AS avg_discount_pct,
+       ROUND(SUM(profit), 2) AS profit
+FROM orders
+GROUP BY sub_category
+ORDER BY avg_discount_pct DESC;
