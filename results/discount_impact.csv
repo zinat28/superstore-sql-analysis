@@ -1,0 +1,5 @@
+discount_band,order_lines,avg_profit
+1. No discount,4798,66.9
+2. Up to 20%,3803,26.5
+3. 21-40%,460,-77.86
+4. Over 40%,933,-106.71
